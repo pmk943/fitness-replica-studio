@@ -23,7 +23,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
+            <a href="/about" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
             
@@ -39,20 +39,23 @@ const Header = () => {
               
               {isProgramsOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg py-2">
-                  <a href="#small-group" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
+                  <a href="/programmes#transformation" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
+                    Six Week Transformation Challenge
+                  </a>
+                  <a href="/programmes#small-group" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
                     Small Group Personal Training
                   </a>
-                  <a href="#one-on-one" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
+                  <a href="/programmes#one-on-one" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
                     1:1 Personal Training
                   </a>
                 </div>
               )}
             </div>
 
-            <a href="#success-stories" className="text-foreground hover:text-primary transition-colors">
+            <a href="/success-stories" className="text-foreground hover:text-primary transition-colors">
               Success Stories
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+            <a href="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </a>
             
@@ -74,19 +77,16 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">
+              <a href="/about" className="text-foreground hover:text-primary transition-colors">
                 About
               </a>
-              <a href="#small-group" className="text-foreground hover:text-primary transition-colors">
-                Small Group Personal Training
+              <a href="/programmes" className="text-foreground hover:text-primary transition-colors">
+                Programmes
               </a>
-              <a href="#one-on-one" className="text-foreground hover:text-primary transition-colors">
-                1:1 Personal Training
-              </a>
-              <a href="#success-stories" className="text-foreground hover:text-primary transition-colors">
+              <a href="/success-stories" className="text-foreground hover:text-primary transition-colors">
                 Success Stories
               </a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+              <a href="/contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
               </a>
               <Button className="btn-primary w-full">
