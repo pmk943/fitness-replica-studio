@@ -12,19 +12,19 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">A</span>
-            </div>
+             <a href="/">
+                <img src="/logo.png" alt="Azaraiah Coaching Studio Logo" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center" />
+              </a>
             <div>
-              <h1 className="text-xl font-bold text-primary">ARMOURY</h1>
+              <h1 className="text-xl font-bold text-primary">Azaraiah</h1>
               <p className="text-xs text-muted-foreground uppercase tracking-wider">Coaching Studio</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/about" className="text-foreground hover:text-primary transition-colors">
-              About
+            <a href="/" className="text-foreground hover:text-primary transition-colors">
+              Home
             </a>
             
             {/* Programs Dropdown */}
@@ -77,8 +77,8 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
-              <a href="/about" className="text-foreground hover:text-primary transition-colors">
-                About
+              <a href="/" className="text-foreground hover:text-primary transition-colors">
+                Home
               </a>
               <a href="/programmes" className="text-foreground hover:text-primary transition-colors">
                 Programmes

@@ -11,7 +11,7 @@ const SuccessStories = () => {
       before: "Size 16, Low Energy",
       after: "Size 12, Marathon Runner",
       timeframe: "6 months",
-      story: "I'd tried every diet and gym membership going, but nothing stuck. The team at Armoury made fitness feel achievable. In 6 months, I went from struggling to climb stairs to completing my first marathon. The support and personalised approach changed everything.",
+      story: "I'd tried every diet and gym membership going, but nothing stuck. The team at Azaraiah made fitness feel achievable. In 6 months, I went from struggling to climb stairs to completing my first marathon. The support and personalised approach changed everything.",
       results: ["Lost 2.5 stone", "Completed first marathon", "Gained confidence", "Better sleep quality"],
       image: "👩‍💼"
     },
@@ -33,7 +33,7 @@ const SuccessStories = () => {
       before: "Post-Pregnancy Struggles",
       after: "Fittest Mum on the Block",
       timeframe: "8 months",
-      story: "After having my second child, I felt like I'd lost myself. The judgment-free environment at Armoury was exactly what I needed. They understood the challenges of being a new mum and created a plan that worked around my unpredictable schedule.",
+      story: "After having my second child, I felt like I'd lost myself. The judgment-free environment at Azaraiah was exactly what I needed. They understood the challenges of being a new mum and created a plan that worked around my unpredictable schedule.",
       results: ["Lost all baby weight + more", "Regained core strength", "Improved mental health", "Set positive example for kids"],
       image: "👩‍⚕️"
     },

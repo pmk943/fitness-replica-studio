@@ -4,7 +4,7 @@ const ReviewsSection = () => {
   const reviews = [
     {
       name: "Sarah M.",
-      text: "Amazing results in just 6 weeks! The team at Armoury made me feel comfortable from day one.",
+      text: "Amazing results in just 6 weeks! The team at Azaraiah made me feel comfortable from day one.",
       rating: 5,
       location: "Milton Keynes"
     },

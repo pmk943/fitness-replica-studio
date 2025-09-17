@@ -7,17 +7,38 @@ import heroImage from "@/assets/fitness-hero.jpg";
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     phone: "",
     email: "",
-    location: ""
+    mode: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
+    // Mobile validation
+    const phone = formData.phone.trim();
+    let valid = false;
+    if (phone.startsWith('0')) {
+      valid = phone.length === 11;
+    } else if (phone.startsWith('+91')) {
+      valid = phone.length === 13;
+    } else {
+      valid = phone.length === 10 && /^\d{10}$/.test(phone);
+    }
+    if (!valid) {
+      alert('Please enter a valid mobile number.\nStarts with 0: 11 digits\nStarts with +91: 13 digits\nOtherwise: 10 digits');
+      return;
+    }
+    // Build WhatsApp message
+    let message = `Hey Azaraih,%0A`;
+    message += `I am '${formData.name}' interested in '${formData.mode}' mode of coaching.%0A`;
+    message += `Below are my contact details:%0A`;
+    message += `mobile: ${formData.phone}%0A`;
+    if (formData.email) {
+      message += `email: ${formData.email}%0A`;
+    }
+    const whatsappUrl = `https://wa.me/6301949479?text=${message}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -35,11 +56,11 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="text-white">
             <h1 className="text-hero text-accent mb-6">
-              PERSONAL TRAINING IN
+              Internation qualified fitness coach
               <br />
-              <span className="text-primary">MILTON KEYNES</span> AND
+              <span className="text-primary">Providing Online & Offline</span>
               <br />
-              <span className="text-primary">TOWCESTER</span>
+              <span className="text-primary">Personal Training, Diet & Nutrition Guidance</span>
             </h1>
             
             <div className="mb-8">
@@ -84,23 +105,15 @@ const HeroSection = () => {
               </div>
             </div>
 
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
-                placeholder="First Name*"
-                value={formData.firstName}
-                onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                placeholder="Name*"
+                value={formData.name}
+                onChange={(e) => setFormData({...formData, name: e.target.value})}
                 className="bg-input border-border"
                 required
               />
-              
-              <Input
-                placeholder="Last Name*"
-                value={formData.lastName}
-                onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                className="bg-input border-border"
-                required
-              />
-              
               <Input
                 placeholder="Phone*"
                 type="tel"
@@ -109,24 +122,20 @@ const HeroSection = () => {
                 className="bg-input border-border"
                 required
               />
-              
               <Input
-                placeholder="Email*"
+                placeholder="Email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                 className="bg-input border-border"
-                required
               />
-
-              <Select onValueChange={(value) => setFormData({...formData, location: value})}>
+              <Select onValueChange={(value) => setFormData({...formData, mode: value})}>
                 <SelectTrigger className="bg-input border-border">
-                  <SelectValue placeholder="Select Your Location*" />
+                  <SelectValue placeholder="Mode of Coaching*" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="milton-keynes">Milton Keynes</SelectItem>
-                  <SelectItem value="towcester">Towcester</SelectItem>
-                  <SelectItem value="newport-pagnell">Newport Pagnell</SelectItem>
+                  <SelectItem value="online">Online</SelectItem>
+                  <SelectItem value="offline">Offline</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -138,7 +147,7 @@ const HeroSection = () => {
                 <label className="flex items-start space-x-2">
                   <input type="checkbox" className="mt-1" required />
                   <span>
-                    I Understand The Armoury Coaching Studio can only work with a limited 
+                    I Understand The Azaraiah Coaching Studio can only work with a limited 
                     number of client transformations at one time and consent to receive 
                     communication to book in my consultation if space is available
                   </span>
