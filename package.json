@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "postbuild": "cp .htaccess dist/.htaccess",
-  "build:dev": "vite build --mode development",
-  "lint": "eslint .",
-  "preview": "vite preview"
+    "dev": "vite",
+    "predeploy": "npm run copy-assets",
+    "build": "npm run predeploy && vite build",
+    "postbuild": "cp .htaccess dist/.htaccess",
+    "build:dev": "vite build --mode development",
+    "copy-assets": "cp -r src/assets dist/",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

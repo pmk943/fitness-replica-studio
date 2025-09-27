@@ -14,9 +14,21 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        assetFileNames: 'assets/[name].[ext]'
+        assetFileNames: (assetInfo) => {
+          const fileName = assetInfo.name || '';
+          // Store images in an images directory
+          if (fileName.match(/\.(png|jpe?g)$/i)) {
+            return 'assets/images/[name].[hash].[ext]';
+          }
+          return 'assets/[name].[hash].[ext]';
+        },
+        chunkFileNames: 'assets/js/[name].[hash].js',
+        entryFileNames: 'assets/js/[name].[hash].js',
       }
-    }
+    },
+    assetsInlineLimit: 0, // Never inline assets
+    copyPublicDir: true, // Copy public directory to dist
+    sourcemap: false, // Disable sourcemaps for production
   },
   plugins: [
     react(),
