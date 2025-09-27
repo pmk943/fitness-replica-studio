@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle2 } from "lucide-react";
-import heroImage from "@/assets/fitness-hero.jpg";
+import heroImage from "@/assets/fitness-hero.png";
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -91,14 +91,14 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="text-primary font-bold text-lg">
+            {/* <div className="text-primary font-bold text-lg">
               <p>LOCATIONS IN MILTON KEYNES (BLETCHLEY), TOWCESTER</p>
               <p>& COMING TO NEWPORT PAGNELL THIS SEPTEMBER</p>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Form */}
-          <div className="bg-card/95 backdrop-blur-sm p-8 rounded-2xl shadow-[var(--shadow-card)]">
+          {/* <div className="bg-card/95 backdrop-blur-sm p-8 rounded-2xl shadow-[var(--shadow-card)]">
             <div className="text-center mb-6">
               <div className="bg-primary text-primary-foreground px-4 py-2 rounded-lg inline-block mb-4">
                 ⬇️ ENTER YOUR DETAILS BELOW FOR YOUR FREE CONSULTATION ⬇️
@@ -154,7 +154,7 @@ const HeroSection = () => {
                 </label>
               </div>
             </form>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

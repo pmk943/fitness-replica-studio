@@ -1,32 +1,32 @@
 import { Star } from "lucide-react";
 
 const ReviewsSection = () => {
-  const reviews = [
-    {
-      name: "Sarah M.",
-      text: "Amazing results in just 6 weeks! The team at Azaraiah made me feel comfortable from day one.",
-      rating: 5,
-      location: "Milton Keynes"
-    },
-    {
-      name: "James L.",
-      text: "Finally found a gym that doesn't intimidate me. Personal approach and great results!",
-      rating: 5,
-      location: "Towcester"
-    },
-    {
-      name: "Emma T.",
-      text: "Lost 2 stone and gained so much confidence. Best decision I ever made for my health.",
-      rating: 5,
-      location: "Milton Keynes"
-    },
-    {
-      name: "Mike R.",
-      text: "The nutrition advice actually works and fits around my busy lifestyle. Highly recommend!",
-      rating: 5,
-      location: "Towcester"
-    }
-  ];
+  // const reviews = [
+  //   {
+  //     name: "Sarah M.",
+  //     text: "Amazing results in just 6 weeks! The team at Azaraiah made me feel comfortable from day one.",
+  //     rating: 5,
+  //     location: "Milton Keynes"
+  //   },
+  //   {
+  //     name: "James L.",
+  //     text: "Finally found a gym that doesn't intimidate me. Personal approach and great results!",
+  //     rating: 5,
+  //     location: "Towcester"
+  //   },
+  //   {
+  //     name: "Emma T.",
+  //     text: "Lost 2 stone and gained so much confidence. Best decision I ever made for my health.",
+  //     rating: 5,
+  //     location: "Milton Keynes"
+  //   },
+  //   {
+  //     name: "Mike R.",
+  //     text: "The nutrition advice actually works and fits around my busy lifestyle. Highly recommend!",
+  //     rating: 5,
+  //     location: "Towcester"
+  //   }
+  // ];
 
   return (
     <section className="py-20 bg-background">
@@ -36,12 +36,12 @@ const ReviewsSection = () => {
             Over 100 ⭐️⭐️⭐️⭐️⭐️ reviews
           </h2>
           <p className="text-xl text-light">
-            From our personal training clients in Milton Keynes and Towcester who 
+            From our personal training clients who 
             <span className="text-primary font-bold"> "never liked gyms"</span> (but love us)
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reviews.map((review, index) => (
             <div key={index} className="bg-card p-6 rounded-xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-glow)] transition-all duration-300">
               <div className="flex items-center mb-4">
@@ -60,15 +60,14 @@ const ReviewsSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="text-center mt-12">
-          <p className="text-primary font-bold text-lg mb-4">
-            See what our clients are saying about their transformations
-          </p>
-          <button className="text-primary hover:text-accent underline">
-            Read More Success Stories →
-          </button>
+          <a href="/success-stories" className="inline-block">
+            <p className="text-primary hover:text-accent underline font-bold text-lg mb-4 transition-colors">
+              See what our clients are saying about their transformations →
+            </p>
+          </a>
         </div>
       </div>
     </section>

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
+import ContactFormModal from "@/components/ContactFormModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -62,7 +64,7 @@ const Header = () => {
               Contact
             </a>
             
-            <Button className="btn-primary">
+            <Button className="btn-primary" onClick={() => setIsContactModalOpen(true)}>
               TRAIN WITH US
             </Button>
           </nav>
@@ -95,12 +97,18 @@ const Header = () => {
               <a href="/contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
               </a>
-              <Button className="btn-primary w-full">
+              <Button className="btn-primary w-full" onClick={() => setIsContactModalOpen(true)}>
                 TRAIN WITH US
               </Button>
             </div>
           </nav>
         )}
+
+        {/* Contact Form Modal */}
+        <ContactFormModal 
+          isOpen={isContactModalOpen}
+          onClose={() => setIsContactModalOpen(false)}
+        />
       </div>
     </header>
   );
