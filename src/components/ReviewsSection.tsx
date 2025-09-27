@@ -63,7 +63,7 @@ const ReviewsSection = () => {
         </div> */}
 
         <div className="text-center mt-12">
-          <a href="/success-stories" className="inline-block">
+          <a href="#/success-stories" className="inline-block">
             <p className="text-primary hover:text-accent underline font-bold text-lg mb-4 transition-colors">
               See what our clients are saying about their transformations →
             </p>
