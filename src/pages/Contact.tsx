@@ -1,39 +1,26 @@
 import Header from "@/components/Header";
 import ContactForm from "./ContactForm";
-import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, MessageCircle, Calendar } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const Contact = () => {
   const locations = [
     {
-      name: "Milton Keynes Studio",
-      subtitle: "Bletchley Location",
-      address: "Unit 12, Fitness Quarter, Bletchley, Milton Keynes MK2 3HE",
-      phone: "01908 123456",
-      email: "mk@Azaraiahcoachingstudio.co.uk",
-      status: "Open Now",
-      description: "Our flagship studio featuring state-of-the-art equipment and private training rooms.",
-      features: ["Private Training Rooms", "Changing Facilities", "Free Parking", "Accessibility Access"]
+      name: "Azzus Studio",
+      address: "Municipal No. 4-3/298/309/502, Teja Enclave, 6th floor, Flat no. 502, Near friends colony ghmc park, Puppalguda, Manikonda, Pin Code: 500075",
+      phone: "+91 6301949479",
+      status: "Open Now"
     },
+    // {
+    //   name: "Towcester", 
+    //   address: "Unit 5, Health Hub, Towcester NN12 6BH",
+    //   phone: "01327 789012",
+    //   status: "Open Now"
+    // },
     {
-      name: "Towcester Studio", 
-      subtitle: "Northamptonshire Location",
-      address: "The Health Hub, Unit 5, Towcester Park, Towcester NN12 6BH",
-      phone: "01327 789012",
-      email: "towcester@Azaraiahcoachingstudio.co.uk",
-      status: "Open Now",
-      description: "Intimate studio space perfect for focused personal training sessions.",
-      features: ["Boutique Setting", "Premium Equipment", "On-site Parking", "Quiet Environment"]
-    },
-    {
-      name: "Newport Pagnell Studio",
-      subtitle: "Coming September 2024",
-      address: "Location details to be confirmed",
+      name: "Azzu Elite fitness studio",
+      address: "Jubilee hills, Hyderabad, Telangana, India",
       phone: "Opening Soon",
-      email: "info@Azaraiahcoachingstudio.co.uk",
-      status: "Coming Soon",
-      description: "Our newest location expanding our reach to serve more clients.",
-      features: ["Modern Facilities", "Latest Equipment", "Convenient Location", "Easy Access"]
+      status: "Coming Soon"
     }
   ];
 
@@ -146,20 +133,15 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Quick Info */}
+            {/* Locations */}
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-8">
-                Visit Our Studios
-              </h2>
-
+              <h3 className="text-2xl font-bold text-foreground mb-8">Our Locations</h3>
+              
               <div className="space-y-6">
                 {locations.map((location, index) => (
                   <div key={index} className="bg-card p-6 rounded-xl shadow-[var(--shadow-card)]">
                     <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-card-foreground">{location.name}</h3>
-                        <p className="text-sm text-primary font-semibold">{location.subtitle}</p>
-                      </div>
+                      <h4 className="text-xl font-bold text-card-foreground">{location.name}</h4>
                       <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                         location.status === 'Open Now' 
                           ? 'bg-green-500/20 text-green-400' 
@@ -169,34 +151,15 @@ const Contact = () => {
                       </span>
                     </div>
                     
-                    <p className="text-muted-foreground text-sm mb-4">{location.description}</p>
-
-                    <div className="space-y-3 mb-4">
-                      <div className="flex items-start space-x-3">
-                        <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground text-sm">{location.address}</span>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-3">
+                        <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
+                        <span className="text-muted-foreground">{location.address}</span>
                       </div>
                       
                       <div className="flex items-center space-x-3">
                         <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground text-sm">{location.phone}</span>
-                      </div>
-
-                      <div className="flex items-center space-x-3">
-                        <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground text-sm">{location.email}</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-card-foreground mb-2">Features:</h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {location.features.map((feature, i) => (
-                          <div key={i} className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <span className="text-xs text-muted-foreground">{feature}</span>
-                          </div>
-                        ))}
+                        <span className="text-muted-foreground">{location.phone}</span>
                       </div>
                     </div>
                   </div>
@@ -205,26 +168,39 @@ const Contact = () => {
 
               {/* Opening Hours */}
               <div className="bg-card p-6 rounded-xl shadow-[var(--shadow-card)] mt-6">
-                <h3 className="text-xl font-bold text-card-foreground mb-4 flex items-center">
+                <h4 className="text-xl font-bold text-card-foreground mb-4 flex items-center">
                   <Clock className="w-5 h-5 text-primary mr-2" />
                   Opening Hours
-                </h3>
+                </h4>
                 
-                <div className="space-y-3 text-muted-foreground">
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">Monday - Friday:</span>
+                <div className="space-y-2 text-muted-foreground">
+                  <div className="flex justify-between">
+                    <span>Monday - Friday:</span>
                     <span>6:00 AM - 9:00 PM</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">Saturday:</span>
+                  <div className="flex justify-between">
+                    <span>Saturday:</span>
                     <span>7:00 AM - 6:00 PM</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium">Sunday:</span>
+                  <div className="flex justify-between">
+                    <span>Sunday:</span>
                     <span>8:00 AM - 4:00 PM</span>
                   </div>
-                  <div className="text-xs text-primary mt-4">
-                    *Bank holiday hours may vary. Call to confirm.
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div className="bg-card p-6 rounded-xl shadow-[var(--shadow-card)] mt-6">
+                <h4 className="text-xl font-bold text-card-foreground mb-4">Get In Touch</h4>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-primary" />
+                    <span className="text-muted-foreground">azaraiahkollurisamson@gmail.com</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <span className="text-muted-foreground">+91 6301-949479</span>
                   </div>
                 </div>
               </div>

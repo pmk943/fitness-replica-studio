@@ -1,0 +1,32 @@
+# Enable rewriting
+RewriteEngine On
+
+# Set base
+RewriteBase /
+
+# Handle requests for specific files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+# Redirect all requests to index.html
+RewriteRule ^(.*)$ index.html [QSA,L]
+
+# Handle Error Documents
+ErrorDocument 404 /index.html
+
+# Set security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
+
+# Enable CORS
+Header set Access-Control-Allow-Origin "*"
+
+# Cache static assets
+<FilesMatch "\.(jpg|jpeg|png|gif|ico|css|js)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes

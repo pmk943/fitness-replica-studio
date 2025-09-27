@@ -52,8 +52,8 @@ const SuccessStories = () => {
 
   const stats = [
     { icon: <Users className="w-8 h-8 text-primary" />, number: "500+", label: "Lives Transformed" },
-    { icon: <TrendingUp className="w-8 h-8 text-primary" />, number: "95%", label: "Success Rate" },
-    { icon: <Trophy className="w-8 h-8 text-primary" />, number: "2.5", label: "Average Stone Lost" },
+    { icon: <TrendingUp className="w-8 h-8 text-primary" />, number: "100%", label: "Success Rate" },
+    { icon: <Trophy className="w-8 h-8 text-primary" />, number: "10.5", label: "Average Stone Lost" },
     { icon: <Star className="w-8 h-8 text-primary" />, number: "4.9/5", label: "Average Rating" }
   ];
 

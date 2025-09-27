@@ -28,7 +28,7 @@ const Header = () => {
             </a>
             
             {/* Programs Dropdown */}
-            <div className="relative">
+            {/* <div className="relative">
               <button
                 onClick={() => setIsProgramsOpen(!isProgramsOpen)}
                 className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors"
@@ -50,10 +50,13 @@ const Header = () => {
                   </a>
                 </div>
               )}
-            </div>
+            </div> */}
 
             <a href="/success-stories" className="text-foreground hover:text-primary transition-colors">
               Success Stories
+            </a>
+            <a href="/celebrity-impact" className="text-foreground hover:text-primary transition-colors">
+              Celebrity Impact
             </a>
             <a href="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
@@ -80,11 +83,14 @@ const Header = () => {
               <a href="/" className="text-foreground hover:text-primary transition-colors">
                 Home
               </a>
-              <a href="/programmes" className="text-foreground hover:text-primary transition-colors">
+              {/* <a href="/programmes" className="text-foreground hover:text-primary transition-colors">
                 Programmes
-              </a>
+              </a> */}
               <a href="/success-stories" className="text-foreground hover:text-primary transition-colors">
                 Success Stories
+              </a>
+              <a href="/celebrity-impact" className="text-foreground hover:text-primary transition-colors">
+                Celebrity Impact
               </a>
               <a href="/contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
