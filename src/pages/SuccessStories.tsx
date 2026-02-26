@@ -56,10 +56,10 @@ const SuccessStories = () => {
             <div className="bg-primary/5 rounded-xl p-6 hover:bg-primary/10 transition-all duration-300">
               <div 
                 className="aspect-[16/9] rounded-lg overflow-hidden cursor-pointer"
-                onClick={() => setSelectedImage("/src/assets/transformations/transform5.png")}
+                onClick={() => setSelectedImage("transform5.png")}
               >
                 <img
-                  src="/src/assets/transformations/transform5.png"
+                  src="transform5.png"
                   alt="My Personal Transformation"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -88,10 +88,10 @@ const SuccessStories = () => {
               <div key={index} className="bg-primary/5 rounded-xl p-4 hover:bg-primary/10 transition-all duration-300">
                 <div 
                   className="aspect-[4/3] rounded-lg overflow-hidden cursor-pointer"
-                  onClick={() => setSelectedImage(`/src/assets/transformations/${image}`)}
+                  onClick={() => setSelectedImage(`${image}`)}
                 >
                   <img
-                    src={`/src/assets/transformations/${image}`}
+                    src={`${image}`}
                     alt={`Client Transformation ${index + 1}`}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />

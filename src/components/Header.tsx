@@ -25,7 +25,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-8">
-            <a href="#/about" className="text-foreground hover:text-primary transition-colors">
+            <a href="#/" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
             
