@@ -99,16 +99,6 @@ const TransformationSection = () => {
               </div>
             </div>
           </div>
-
-          <div className="text-center">
-            <p className="text-xl text-primary font-bold mb-8">
-              Ready to start your transformation journey?
-            </p>
-            
-            <Button className="btn-primary text-lg px-8 py-4">
-              START YOUR FREE CONSULTATION
-            </Button>
-          </div>
         </div>
       </div>
     </section>

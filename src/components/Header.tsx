@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
+import ContactFormModal from "@/components/ContactFormModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -12,23 +14,23 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">A</span>
-            </div>
+             <a href="#/">
+                <img src="/logo.png" alt="Azaraiah Coaching Studio Logo" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center" />
+              </a>
             <div>
-              <h1 className="text-xl font-bold text-primary">ARMOURY</h1>
+              <h1 className="text-xl font-bold text-primary">Azaraiah</h1>
               <p className="text-xs text-muted-foreground uppercase tracking-wider">Coaching Studio</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="/about" className="text-foreground hover:text-primary transition-colors">
+                    <nav className="hidden md:flex items-center space-x-8">
+            <a href="#/" className="text-foreground hover:text-primary transition-colors">
               About
             </a>
             
             {/* Programs Dropdown */}
-            <div className="relative">
+            {/* <div className="relative">
               <button
                 onClick={() => setIsProgramsOpen(!isProgramsOpen)}
                 className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors"
@@ -39,27 +41,30 @@ const Header = () => {
               
               {isProgramsOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-lg shadow-lg py-2">
-                  <a href="/programmes#transformation" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
+                  <a href="#/programmes#transformation" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
                     Six Week Transformation Challenge
                   </a>
-                  <a href="/programmes#small-group" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
+                  <a href="#/programmes#small-group" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
                     Small Group Personal Training
                   </a>
-                  <a href="/programmes#one-on-one" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
+                  <a href="#/programmes#one-on-one" className="block px-4 py-2 text-card-foreground hover:bg-secondary">
                     1:1 Personal Training
                   </a>
                 </div>
               )}
-            </div>
+            </div> */}
 
-            <a href="/success-stories" className="text-foreground hover:text-primary transition-colors">
+            <a href="#/success-stories" className="text-foreground hover:text-primary transition-colors">
               Success Stories
             </a>
-            <a href="/contact" className="text-foreground hover:text-primary transition-colors">
+            <a href="#/celebrity-impact" className="text-foreground hover:text-primary transition-colors">
+              Celebrity Impact
+            </a>
+            <a href="#/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </a>
             
-            <Button className="btn-primary">
+            <Button className="btn-primary" onClick={() => setIsContactModalOpen(true)}>
               TRAIN WITH US
             </Button>
           </nav>
@@ -77,24 +82,33 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
-              <a href="/about" className="text-foreground hover:text-primary transition-colors">
-                About
+              <a href="#/" className="text-foreground hover:text-primary transition-colors">
+                Home
               </a>
-              <a href="/programmes" className="text-foreground hover:text-primary transition-colors">
+              {/* <a href="#/programmes" className="text-foreground hover:text-primary transition-colors">
                 Programmes
-              </a>
-              <a href="/success-stories" className="text-foreground hover:text-primary transition-colors">
+              </a> */}
+              <a href="#/success-stories" className="text-foreground hover:text-primary transition-colors">
                 Success Stories
               </a>
-              <a href="/contact" className="text-foreground hover:text-primary transition-colors">
+              <a href="#/celebrity-impact" className="text-foreground hover:text-primary transition-colors">
+                Celebrity Impact
+              </a>
+              <a href="#/contact" className="text-foreground hover:text-primary transition-colors">
                 Contact
               </a>
-              <Button className="btn-primary w-full">
+              <Button className="btn-primary w-full" onClick={() => setIsContactModalOpen(true)}>
                 TRAIN WITH US
               </Button>
             </div>
           </nav>
         )}
+
+        {/* Contact Form Modal */}
+        <ContactFormModal 
+          isOpen={isContactModalOpen}
+          onClose={() => setIsContactModalOpen(false)}
+        />
       </div>
     </header>
   );
